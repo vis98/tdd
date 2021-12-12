@@ -1,7 +1,5 @@
 package com.demo.tddcalc;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Calculator {
     
@@ -19,7 +17,7 @@ public class Calculator {
 	      
 		}
 		else {
-			String nos[]=numbers.split(",");
+			String nos[]=customDelimiter(numbers);
 			return findsum(nos);
 		}
 	}
@@ -27,8 +25,14 @@ public class Calculator {
 	public static int findsum(String no[]) {
 		int sum=0;
 		for(int i=0;i<no.length;i++) {
-			sum=sum+Integer.parseInt(no[i]);
+			if(no[i]!=""&& Integer.parseInt(no[i])>=0 && Integer.parseInt(no[i])<=1000) {
+				sum=sum+Integer.parseInt(no[i]);
+			}
 		}
 		return sum;
 	}
+	 public static String[] customDelimiter(String numbers) {
+		 String nos[]=numbers.trim().split("[;,\n//]*");
+		 return nos;
+	 }
 }
