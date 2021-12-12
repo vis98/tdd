@@ -19,4 +19,8 @@ public class CalculatorTest {
 	public void sumOfTwoNumbers() {
 		assertEquals(3,Calculator.add("1,2"));
 	}
+	@Test
+	public void sumOfAllNumbers() {
+		assertEquals(10,Calculator.add("1,2,3,4"));
+	}
 }

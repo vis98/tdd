@@ -14,17 +14,21 @@ public class Calculator {
 		if(numbers.length()==1) {
 			//added pattern matching because thought is to check whether single string is integer or not
 		 String input=Character.toString(numbers.charAt(0));
-		 Pattern p = Pattern.compile(regex);
-          
-	      Matcher m = p.matcher(input);
-	      if(m.find() && m.group().equals(input));
-	      {
+		
 	    	  return Integer.parseInt(input);
-	      }
+	      
 		}
 		else {
 			String nos[]=numbers.split(",");
-			return Integer.parseInt(nos[0])+Integer.parseInt(nos[1]);
+			return findsum(nos);
 		}
+	}
+	
+	public static int findsum(String no[]) {
+		int sum=0;
+		for(int i=0;i<no.length;i++) {
+			sum=sum+Integer.parseInt(no[i]);
+		}
+		return sum;
 	}
 }
