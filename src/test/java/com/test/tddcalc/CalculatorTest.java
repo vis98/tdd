@@ -13,7 +13,7 @@ public class CalculatorTest {
 	@Test
 	public void returnSingle() {
 		assertEquals(1, Calculator.add("1"));
-	}
+	} 
 	
 	@Test
 	public void sumOfTwoNumbers() {
@@ -26,5 +26,13 @@ public class CalculatorTest {
 	@Test
 	public void allDelimiter() {
 		assertEquals(3,Calculator.add("//;\n1;2"));
+	}
+	@Test
+	public void negativeNosException() {
+		try{
+			Calculator.add("1,-3,-4");
+		}catch(RuntimeException e) {
+			assertEquals("negatives not allowed: -3,-4",e.getMessage());
+		}
 	}
 }
