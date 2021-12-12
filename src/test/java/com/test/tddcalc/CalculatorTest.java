@@ -9,4 +9,9 @@ public class CalculatorTest {
 	public void returnZeroOnEmpty() {
 		assertEquals(0, Calculator.add(""));
 	}
+	
+	@Test
+	public void returnOneOnSingle() {
+		assertEquals(1, Calculator.add("1"));
+	}
 }
