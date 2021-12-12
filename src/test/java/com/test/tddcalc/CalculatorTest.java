@@ -14,4 +14,9 @@ public class CalculatorTest {
 	public void returnSingle() {
 		assertEquals(1, Calculator.add("1"));
 	}
+	
+	@Test
+	public void sumOfTwoNumbers() {
+		assertEquals(3,Calculator.add("1,2"));
+	}
 }
