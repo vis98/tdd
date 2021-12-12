@@ -8,8 +8,11 @@ public class Calculator {
 	public static int add (String numbers) {
 		 
 			String nos[]=customDelimiter(numbers);
-         checkNegative(nos);
-           System.out.println("length is"+nos.length);
+			  for(int i=0;i<nos.length;i++) {
+				  System.out.println(nos[i]);
+			  }
+			checkNegative(nos);
+        
            for(int l=0;l<nos.length;l++) {
         	   System.out.println(nos[l]);
            }
@@ -43,13 +46,14 @@ public class Calculator {
 		 String nos[]=numbers.trim().split("[;,\n//]*");
 		 return nos;
 	 }
-	 private static void checkNegative(String num[]) {
-			ArrayList<String> negative = new ArrayList<String>();
+	 private static String checkNegative(String num[]) {
+	        StringBuilder negativeNumbers = new StringBuilder();	
 			for(int i=0; i<num.length; i++) {
 				if(num[i]!=""&& Integer.parseInt(num[i])<0) {
-					negative.add(num[i]);
+					negativeNumbers.append(num[i]+",");
 				}
 			}
-			
+		//	System.out.println("negative is test"+negative.size());
+			return negativeNumbers.toString();
 		}
 }
