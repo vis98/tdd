@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import com.demo.tddcalc.*;
 public class CalculatorTest {
-	/*@Test
+	@Test
 	public void returnZeroOnEmpty() {
 		assertEquals(0, Calculator.add(""));
 	}
@@ -26,7 +26,7 @@ public class CalculatorTest {
 	@Test
 	public void allDelimiter() {
 		assertEquals(3,Calculator.add("//;\n1;2"));
-	} */
+	} 
 	@Test
 	public void negativeNosException() {
 		
