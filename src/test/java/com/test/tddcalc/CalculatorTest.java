@@ -11,7 +11,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void returnOneOnSingle() {
-		assertEquals(1, Calculator.add("1"));
+	public void returnSingle() {
+		assertEquals(2, Calculator.add("2"));
 	}
 }
